@@ -5,6 +5,7 @@ import { connectDB } from './config/db.js'
 
 import AuthRoute from './routes/Auth.js'
 
+app.use(cors())
 const app=express()
 dotenv.config()
 
@@ -12,7 +13,6 @@ const port = process.env.PORT || 8000
 
 //middlewares
 app.use(express.json()) 
-app.use(cors())
 
 app.use('/',AuthRoute)
 
